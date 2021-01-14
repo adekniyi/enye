@@ -3,11 +3,11 @@ import logo from './logo.svg';
 import './App.css';
 import Data from './components/Data';
 import Pagination from './components/Pagination';
-//import {sortData} from './components/Filter'
+import {sortData} from './components/Filter'
 
 
 function App() {
-  const [users, setUsers] = useState({});
+  const [users, setUsers] = useState([]);
   const [currentPage,setCurrentPage] = useState(1);
   const [postsPerPage,setPostsPerPage] = useState(20);
   const [filter, setFilter] = useState([]);
@@ -25,10 +25,14 @@ function App() {
         }).catch((err) => console.log(`cannot fetch data ${err}`))
 },[]);
 
+useEffect(() => {
+  setFilter(users);
+}, [users]);
 
-// useEffect(() => {
-//   sortData(sort, users, setFilter);
-// }, [sort]);
+
+useEffect(() => {
+  sortData(sort, users, setFilter);
+}, [sort]);
 
 
 const search = (input) => {
