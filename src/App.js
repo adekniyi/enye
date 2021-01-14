@@ -58,7 +58,7 @@ const search = (input) => {
 
 const indexOfLastPost = currentPage * postsPerPage;
 const indexOfFirstPost = indexOfLastPost - postsPerPage;
-const currentPosts = users.slice(indexOfFirstPost, indexOfLastPost);
+const currentPosts = filter.slice(indexOfFirstPost, indexOfLastPost);
 const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
 
@@ -73,9 +73,9 @@ const paginate = (pageNumber) => setCurrentPage(pageNumber)
   return (
     <div className="App">
       <div className="input-div">
-        <input type="text"  onChange={search} class="input"/>
+        <input type="text"  onChange={search} className="input"/>
 
-        <div class="btn">
+        <div className="btn">
           <div className="bar dropdown">
                 <span className="paragraphFade">Sort:</span>
                 <span className="title sortTitle">

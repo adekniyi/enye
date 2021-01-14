@@ -108,6 +108,9 @@
 
 .btn:focus,
 .btn:hover{
+
+
+
   outline:none;
   border: 1px solid #bbbbbb;
 }
@@ -190,4 +193,16 @@ body {
   background-color: #fff;
   border: 1px solid #dee2e6;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+
+
+
+@media screen and (max-width:750px) {
+
+  .dataCard {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
