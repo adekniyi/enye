@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Data from './components/Data';
 import Pagination from './components/Pagination';
-import {sortData} from './components/Filter'
+//import {sortData} from './components/Filter'
 
 
 function App() {
@@ -26,9 +26,9 @@ function App() {
 },[]);
 
 
-useEffect(() => {
-  sortData(sort, users, setFilter);
-}, [sort]);
+// useEffect(() => {
+//   sortData(sort, users, setFilter);
+// }, [sort]);
 
 
 const search = (input) => {
@@ -54,7 +54,7 @@ const search = (input) => {
 
 const indexOfLastPost = currentPage * postsPerPage;
 const indexOfFirstPost = indexOfLastPost - postsPerPage;
-const currentPosts = filter.slice(indexOfFirstPost, indexOfLastPost);
+const currentPosts = users.slice(indexOfFirstPost, indexOfLastPost);
 const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
 
