@@ -64,6 +64,6 @@ export const sortData = (sortBy, target, setter) => {
     } catch (err) {
       //   at this point sorted remains unchanged
       console.log("Unable to sort : ", err);
-      return setter([...sorted]);
+    return setter([...sorted]);
     }
   };
